@@ -1,0 +1,11 @@
+---
+- name: Install Proxy
+  hosts: proxy
+  roles:
+    - geerlingguy.haproxy
+  vars:
+    haproxy_backend_servers:
+      - name: "vm3"
+        address: "134.122.76.155"
+      - name: "vm2"
+        address: "134.122.68.2"

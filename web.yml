@@ -1,0 +1,20 @@
+---
+- name: Install Nginx Webservers
+  hosts: web
+  tasks:
+    - name: Install Nginx
+      apt:
+        name: nginx
+        update_cache: yes
+        state: present
+    - name: Start Nginx
+      service:
+        name: nginx
+        state: started
+    - name: Copy index.html from template
+      template:
+        src: index.html.j2
+        dest: /var/www/html/index.html
+        owner: root
+        group: root
+        mode: 0644
