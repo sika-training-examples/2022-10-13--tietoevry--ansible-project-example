@@ -9,3 +9,5 @@
         address: "134.122.76.155"
       - name: "vm2"
         address: "134.122.68.2"
+      - name: "vm5"
+        address: "139.59.129.92"
